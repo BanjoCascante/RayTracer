@@ -374,3 +374,4 @@ healthchecksdb
 *.exe
 *.out
 *.app
+/RayTracer/myImage.ppm
