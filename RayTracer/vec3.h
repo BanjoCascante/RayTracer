@@ -96,4 +96,60 @@ inline vec3 unitVector(vec3 vec) {
     return vec/vec.length();
 }
 
+inline void vec3::makeUnitVector()
+{
+    float l = length();
+    v[0] /= l;
+    v[1] /= l;
+    v[2] /= l;
+}
+
+inline vec3 & vec3::operator+=(const vec3 & v2)
+{
+    v[0] += v2[0];
+    v[1] += v2[1];
+    v[2] += v2[2];
+    return *this;
+}
+
+inline vec3 & vec3::operator-=(const vec3 & v2)
+{
+    v[0] -= v2[0];
+    v[1] -= v2[1];
+    v[2] -= v2[2];
+    return *this;
+}
+
+inline vec3 & vec3::operator*=(const vec3 & v2)
+{
+    v[0] *= v2[0];
+    v[1] *= v2[1];
+    v[2] *= v2[2];
+    return *this;
+}
+
+inline vec3 & vec3::operator/=(const vec3 & v2)
+{
+    v[0] /= v2[0];
+    v[1] /= v2[1];
+    v[2] /= v2[2];
+    return *this;
+}
+
+inline vec3 & vec3::operator*=(const float & t)
+{
+    v[0] *= t;
+    v[1] *= t;
+    v[2] *= t;
+    return *this;
+}
+
+inline vec3& vec3::operator/=(const float & t)
+{
+    v[0] /= t;
+    v[1] /= t;
+    v[2] /= t;
+    return *this;
+}
+
 #endif // !VEC3_H
