@@ -9,7 +9,7 @@ public:
     ray(const vec3& origin, const vec3& direction);
     vec3 origin() const ;
     vec3 direction() const;
-    vec3 pointAtParameter(float t);
+    vec3 pointAtParameter(float t) const;
     ~ray();
 private:
     vec3 originVec;
