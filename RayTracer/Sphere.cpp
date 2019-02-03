@@ -13,14 +13,14 @@ bool Sphere::hit(const ray & r, float tMin, float tMax, HitRecord & rec) const
     float c = dot(originToCenter, originToCenter) - radius * radius;
     float discriminant = b * b - a*c;
     if (discriminant > 0) {
-        float temp = (-b - float(sqrt(discriminant))) / a;
+        float temp = (-b - sqrtf(discriminant)) / a;
         if (temp <tMax && temp>tMin) {
             rec.t = temp;
             rec.p = r.pointAtParameter(rec.t);
             rec.normal = (rec.p - center) / radius;
             return true;
         }
-        temp = (-b + float(sqrt(discriminant))) / a;
+        temp = (-b + sqrtf(discriminant)) / a;
         if (temp <tMax && temp>tMin) {
             rec.t = temp;
             rec.p = r.pointAtParameter(rec.t);

@@ -25,7 +25,7 @@ public:
     inline vec3& operator*= (const float& t);
     inline vec3& operator/= (const float& t);
     inline float squaredLength() const { return v[0] * v[0] + v[1] * v[1] + v[2] * v[2]; };
-    inline float length() const { return float(sqrt(squaredLength())); };
+    inline float length() const { return sqrtf(squaredLength()); };
     inline void makeUnitVector();
     ~vec3();
 private:
