@@ -151,6 +151,9 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Hitable.h" />
     <ClInclude Include="HitableList.h" />
+    <ClInclude Include="Lambertian.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Metal.h" />
     <ClInclude Include="ray.h" />
     <ClInclude Include="Sphere.h" />
     <ClInclude Include="stdafx.h" />
@@ -161,6 +164,9 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Hitable.cpp" />
     <ClCompile Include="HitableList.cpp" />
+    <ClCompile Include="Lambertian.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Metal.cpp" />
     <ClCompile Include="ray.cpp" />
     <ClCompile Include="RayTracer.cpp" />
     <ClCompile Include="Sphere.cpp" />
