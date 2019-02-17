@@ -18,6 +18,25 @@ inline vec3 reflect(const vec3 & light, const vec3 & n)
     return light - 2 * dot(light, n)*n;
 }
 
+inline bool refract(const vec3 &v, const vec3& n, float niOverNt, vec3& refracted) {
+
+    vec3 uv{ unitVector(v) };
+    float dt{ dot(uv, n) };
+    float discriminant{ 1.0f - niOverNt * niOverNt* (1 - dt * dt) };
+    if (discriminant > 0) {
+        refracted = niOverNt * (uv - n * dt) - n * sqrtf(discriminant);
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+inline float schlick(float cosine, float refIdx) {
+    float r0{ (1 - refIdx) / (1 + refIdx) };
+    r0 = r0 * r0;
+    return r0 + (1 - r0)*powf((1 - cosine), 5);
+}
 class Material
 {
 public:

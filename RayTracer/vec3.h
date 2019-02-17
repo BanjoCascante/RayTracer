@@ -15,7 +15,7 @@ public:
     inline float g() const { return v[1]; };
     inline float b() const { return v[2]; };
     inline const vec3& operator+() const {return *this; };
-    inline const vec3& operator-() const { return vec3(-v[0], -v[1], -v[2]); }
+    inline const vec3& operator-() const { return vec3{ -v[0], -v[1], -v[2] }; }
     inline const float operator[] (int i) const{ return v[i]; };
     inline const float& operator[](int i){ return v[i]; };
     inline vec3& operator+= (const vec3& v2);
