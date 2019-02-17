@@ -48,6 +48,9 @@
     <ClInclude Include="Metal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Dielectric.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Metal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dielectric.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
