@@ -20,7 +20,9 @@ bool Dielectric::scatter(const ray & r_in, const HitRecord & rec, vec3 & attenua
     if (dot(r_in.direction(),rec.normal) > 0) {
         outwardNormal = -rec.normal;
         niOverNt = refIdx;
-        cosine = refIdx * dot(r_in.direction(), rec.normal) / r_in.direction().length();
+        //cosine = refIdx * dot(r_in.direction(), rec.normal) / r_in.direction().length();
+        cosine = dot(r_in.direction(), rec.normal) / r_in.direction().length();
+        cosine = sqrtf(1.0f - refIdx * refIdx*(1.0f - cosine * cosine));
     }
     else {
         outwardNormal = rec.normal;
@@ -37,7 +39,7 @@ bool Dielectric::scatter(const ray & r_in, const HitRecord & rec, vec3 & attenua
         reflectProb = 1.0f;
     }
 
-    if ((rand()/RAND_MAX) < reflectProb) {
+    if (randomDouble() < reflectProb) {
         scattered = ray(rec.p, reflected);
     }
     else {
