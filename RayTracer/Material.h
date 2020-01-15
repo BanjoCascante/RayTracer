@@ -2,13 +2,13 @@
 #include "ray.h"
 #include "vec3.h"
 #include <cstdlib>
+#include "random.h"
 class HitRecord;
 
 inline vec3 randomInUnitSphere() {
     vec3 p{ 0.0f,0.0f,0.0f };
     do {
-        float random{ float(rand()) / RAND_MAX };
-        p = 2.0f* vec3(random, random, random) - vec3(1.0f, 1.0f, 1.0f);
+        p = 2.0f* vec3(randomDouble(), randomDouble(), randomDouble()) - vec3(1.0f, 1.0f, 1.0f);
     } while (p.squaredLength() >= 1.0);
     return p;
 }
@@ -23,7 +23,7 @@ inline bool refract(const vec3 &v, const vec3& n, float niOverNt, vec3& refracte
     vec3 uv{ unitVector(v) };
     float dt{ dot(uv, n) };
     float discriminant{ 1.0f - niOverNt * niOverNt* (1 - dt * dt) };
-    if (discriminant > 0) {
+    if (discriminant > 0.0f) {
         refracted = niOverNt * (uv - n * dt) - n * sqrtf(discriminant);
         return true;
     }
@@ -33,9 +33,9 @@ inline bool refract(const vec3 &v, const vec3& n, float niOverNt, vec3& refracte
 }
 
 inline float schlick(float cosine, float refIdx) {
-    float r0{ (1 - refIdx) / (1 + refIdx) };
+    float r0{ (1.0f - refIdx) / (1.0f + refIdx) };
     r0 = r0 * r0;
-    return r0 + (1 - r0)*powf((1 - cosine), 5);
+    return r0 + (1.0f - r0)*powf((1.0f - cosine), 5.0f);
 }
 class Material
 {
