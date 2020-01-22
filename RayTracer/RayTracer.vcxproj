@@ -151,7 +151,7 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Dielectric.h" />
     <ClInclude Include="Hitable.h" />
-    <ClInclude Include="HitableList.h" />
+    <ClInclude Include="HitableVector.h" />
     <ClInclude Include="Lambertian.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Metal.h" />
@@ -166,7 +166,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Dielectric.cpp" />
     <ClCompile Include="Hitable.cpp" />
-    <ClCompile Include="HitableList.cpp" />
+    <ClCompile Include="HitableVector.cpp" />
     <ClCompile Include="Lambertian.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Metal.cpp" />

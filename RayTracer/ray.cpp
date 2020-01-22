@@ -6,26 +6,15 @@ ray::ray()
 {
 }
 
-ray::ray(const vec3 & origin, const vec3 & direction)
+ray::ray(const vec3 & originParam, const vec3 & directionParam)
 {
-    originVec = origin;
-    directionVec = direction;
-}
-
-vec3 ray::origin() const
-{
-
-    return originVec;
-}
-
-vec3 ray::direction() const
-{
-    return directionVec;
+    origin= originParam;
+    direction = directionParam;
 }
 
 vec3 ray::pointAtParameter(float t) const
 {
-    return originVec + t*directionVec;
+    return origin + t*direction;
 }
 
 
