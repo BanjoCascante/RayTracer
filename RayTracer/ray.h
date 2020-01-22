@@ -7,13 +7,11 @@ public:
 
     ray();
     ray(const vec3& origin, const vec3& direction);
-    vec3 origin() const ;
-    vec3 direction() const;
     vec3 pointAtParameter(float t) const;
     ~ray();
+    vec3 origin;
+    vec3 direction;
 private:
-    vec3 originVec;
-    vec3 directionVec;
 };
 
 #endif // !RAY_H
